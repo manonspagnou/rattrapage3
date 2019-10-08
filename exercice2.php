@@ -38,16 +38,13 @@ class ArrayManager {
 
 	public function nombresImpairsCompter()
 	{
-		$listeNombres = $this->getListeNombres();
-		$nombresImpairs = (sizeof($listeNombres) - $this->nombresPairsCompter());
+		$nombresImpairs = (sizeof($this->listeNombres) - $this->nombresPairsCompter());
 		return $nombresImpairs;
-
-		// Tous les chiffres qui ne sont pas pairs, donc le reste de la liste $listeNombres.
 	}
 
 }
 
-$listeNombres = array(12, 13, 14, 185, 170, 177, 17, 56, 71);
+$listeNombres = array(12, 13, 14, 185, 170, 177, 17);
 $manager = new ArrayManager($listeNombres);
-echo 'Nombres pairs : ' . $manager->nombresPairsCompter($listeNombres) . ' / ';
-echo 'Nombres impairs : ' . $manager->nombresImpairsCompter($listeNombres);
+echo 'Nombres pairs : ' . $manager->nombresPairsCompter() . ' / ';
+echo 'Nombres impairs : ' . $manager->nombresImpairsCompter();
