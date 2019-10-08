@@ -42,12 +42,12 @@ class ArrayManager {
 		$nombresImpairs = (sizeof($listeNombres) - $this->nombresPairsCompter());
 		return $nombresImpairs;
 
-		// Tous les chiffres qui ne sont pas pairs, le reste de la liste $listeNombres.
+		// Tous les chiffres qui ne sont pas pairs, donc le reste de la liste $listeNombres.
 	}
 
 }
 
-$listeNombres = array(12, 13, 14, 185, 170, 177, 17, 56);
+$listeNombres = array(12, 13, 14, 185, 170, 177, 17, 56, 71);
 $manager = new ArrayManager($listeNombres);
-echo 'Nombres paires : ' . $manager->nombresPairsCompter($listeNombres) . ' / ';
-echo 'Nombres impaires : ' . $manager->nombresImpairsCompter($listeNombres);
+echo 'Nombres pairs : ' . $manager->nombresPairsCompter($listeNombres) . ' / ';
+echo 'Nombres impairs : ' . $manager->nombresImpairsCompter($listeNombres);
