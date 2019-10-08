@@ -21,10 +21,11 @@ class ArrayManager {
 		$this->listeNombres = $listeNombres;
 	}
 
-	public function nombresPairsCompter()
+	public function nombresPairsImpairsCompter()
 	{
 		$listeNombres = $this->getListeNombres();
 		$nombresPairs = null;
+		$nombesImpairs = null;
 		$size = sizeof($listeNombres);
 
 		for ($i = 0; $i < $size; $i++) {
@@ -32,28 +33,16 @@ class ArrayManager {
 			if ($nombreCourant %2 == 0) {
 				$nombresPairs = $nombresPairs +1;
 			}
-		}
-		return $nombresPairs;
-	}
-
-	public function nombresImpairsCompter()
-	{
-		$listeNombres = $this->getListeNombres();
-		$nombresImpairs = null;
-		$size = sizeof($listeNombres);
-
-		for ($i = 0; $i < $size; $i++) {
-			$nombreCourant = $listeNombres[$i];
-			if ($nombreCourant %2 == 1) {
+			else ($nombreCourant %2 != 0) {
 				$nombresImpairs = $nombresImpairs +1;
 			}
 		}
-		return $nombresImpairs;
+		return $nombresPairs;
+		return $nombesImpairs;
 	}
 
 }
 
 $listeNombres = array(12, 13, 14, 185, 170, 177, 178);
 $manager = new ArrayManager($listeNombres);
-echo $listeNombres->nombresPairsCompter();
-echo $listeNombres->nombresImpairsCompter();
+echo $listeNombres->nombresPairsImpairsCompter();
