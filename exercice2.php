@@ -39,21 +39,15 @@ class ArrayManager {
 	public function nombresImpairsCompter()
 	{
 		$listeNombres = $this->getListeNombres();
-		$nombresImpairs = null;
-		$size = sizeof($listeNombres);
-
-		for ($i = 0; $i < $size; $i++) {
-			$nombreCourant = $listeNombres[$i];
-			if ($nombreCourant %2 != 0) {
-				$nombresImpairs = $nombresImpairs +1;
-			}
-		}
+		$nombresImpairs = (sizeof($listeNombres) - $this->nombresPairsCompter());
 		return $nombresImpairs;
+
+		// Tous les chiffres qui ne sont pas pairs, le reste de la liste $listeNombres.
 	}
 
 }
 
-$listeNombres = array(12, 13, 14, 185, 170, 177, 178);
+$listeNombres = array(12, 13, 14, 185, 170, 177, 17, 56);
 $manager = new ArrayManager($listeNombres);
-echo $listeNombres->nombresPairsCompter();
-echo $listeNombres->nombresImpairsCompter();
+echo 'Nombres paires : ' . $manager->nombresPairsCompter($listeNombres) . ' / ';
+echo 'Nombres impaires : ' . $manager->nombresImpairsCompter($listeNombres);
