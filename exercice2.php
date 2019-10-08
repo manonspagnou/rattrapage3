@@ -42,6 +42,9 @@ class ArrayManager {
 		return $nombresImpairs;
 	}
 
+	// Nombres impairs = tous les autres chiffres de la liste qui ne sont pas pairs. 
+	// (taille de la liste - nombres pairs)
+
 }
 
 $listeNombres = array(12, 13, 14, 185, 170, 177, 17);
